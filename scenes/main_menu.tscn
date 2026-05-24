@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://de6an1r06fy4j"]
+
+[ext_resource type="Script" uid="uid://0lgno5ahlamm" path="res://scripts/main_menu/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://hlkanibw5nf6" path="res://assets/sample-desert.png" id="2_ekxnf"]
+
+[node name="Main Menu" type="Node2D" unique_id=940945312]
+position = Vector2(-8, -32)
+script = ExtResource("1_l6cm7")
+
+[node name="SampleDesert" type="Sprite2D" parent="." unique_id=376284391]
+position = Vector2(560.00006, 424.00003)
+scale = Vector2(19.5625, 19.5625)
+texture = ExtResource("2_ekxnf")
+
+[node name="button_manager" type="Control" parent="." unique_id=927198574]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="start" type="Button" parent="button_manager" unique_id=1667548704]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -17.2
+anchor_top = 1.6
+anchor_right = -17.2
+anchor_bottom = 1.6
+offset_left = 736.0
+offset_top = 72.0
+offset_right = 1056.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 64
+text = "START"
+metadata/_edit_use_anchors_ = true
+
+[node name="options" type="Button" parent="button_manager" unique_id=859477024]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -17.2
+anchor_top = 1.6
+anchor_right = -17.2
+anchor_bottom = 1.6
+offset_left = 736.0
+offset_top = 216.0
+offset_right = 1056.0
+offset_bottom = 344.0
+theme_override_font_sizes/font_size = 64
+text = "SETTINGS"
+metadata/_edit_use_anchors_ = true
+
+[node name="exit" type="Button" parent="button_manager" unique_id=604928026]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -17.2
+anchor_top = 1.6
+anchor_right = -17.2
+anchor_bottom = 1.6
+offset_left = 736.0
+offset_top = 359.0
+offset_right = 1056.0
+offset_bottom = 487.0
+theme_override_font_sizes/font_size = 64
+text = "EXIT"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1239922439]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 376.0
+offset_top = 64.0
+offset_right = 1080.0
+offset_bottom = 648.0
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.3647059, 0.16078432, 0.023529412, 1)
+theme_override_font_sizes/normal_font_size = 200
+theme_override_font_sizes/bold_font_size = 200
+bbcode_enabled = true
+text = "CIV GAME"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="button_manager/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="button_manager/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="button_manager/exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dax5brfgijcp6"]
+
+[ext_resource type="Texture2D" uid="uid://hlkanibw5nf6" path="res://assets/sample-desert.png" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://c4muggt21fscs" path="res://scripts/game/camera-movement.gd" id="2_lnu2h"]
+
+[node name="game" type="Node2D" unique_id=620889112]
+
+[node name="SampleDesert" type="Sprite2D" parent="." unique_id=1089050476]
+texture = ExtResource("1_yqjtg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=600402032]
+zoom = Vector2(10, 10)
+script = ExtResource("2_lnu2h")
+movement_speed = 120.0
