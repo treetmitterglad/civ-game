@@ -28,7 +28,13 @@ Civ-Game is a strategy game where players build and manage their own civilizatio
 2. **Steps**:
   - Clone or download the repository to your local machine.
   - Open the project in Godot Engine.
-  - Run the menu scene (`main_menu`) to start the game.
+  - Run the main scene (`main_menu`) to start the game.
+
+---
+
+## Contributing
+
+This project is not currently accepting contributions.
 
 ---
 
@@ -37,10 +43,3 @@ Civ-Game is a strategy game where players build and manage their own civilizatio
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as per the license terms.
 
 ---
-
-## Contact
-
-For questions, suggestions, or feedback, please open an issue in the repository or contact the project maintainer:
-
-- **Eli Bowman**
-- Email: [You
