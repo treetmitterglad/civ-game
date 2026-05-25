@@ -32,6 +32,7 @@ sources/2 = SubResource("TileSetAtlasSource_u5sy4")
 [node name="game" type="Node2D" unique_id=620889112]
 script = ExtResource("1_lbhrr")
 dark_tile_frequency = 0.3
+water_chance_per_zone = 1.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1674634934]
 tile_set = SubResource("TileSet_u5sy4")

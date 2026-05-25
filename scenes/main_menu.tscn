@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://de6an1r06fy4j"]
 
 [ext_resource type="Script" uid="uid://0lgno5ahlamm" path="res://scripts/main_menu/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://hlkanibw5nf6" path="res://assets/sample-desert.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://dreis5e3jlsq2" path="res://assets/sample-desert.png" id="2_ekxnf"]
 
 [node name="Main Menu" type="Node2D" unique_id=940945312]
 position = Vector2(-8, -32)
