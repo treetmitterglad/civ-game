@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://betjohd1jjex8" path="res://assets/light-sand.png" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://nm8k1ih5emu5" path="res://assets/dark-sand.png" id="2_lbhrr"]
 [ext_resource type="Script" uid="uid://c4muggt21fscs" path="res://scripts/game/camera-movement.gd" id="2_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://cubs0agyj4r5r" path="res://assets/water.png" id="4_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("1_lnu2h")
@@ -19,14 +20,17 @@ texture = ExtResource("2_lbhrr")
 0:1/0 = 0
 1:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
+texture = ExtResource("4_iywne")
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_u5sy4"]
 sources/0 = SubResource("TileSetAtlasSource_iywne")
 sources/1 = SubResource("TileSetAtlasSource_p57ef")
+sources/2 = SubResource("TileSetAtlasSource_u5sy4")
 
 [node name="game" type="Node2D" unique_id=620889112]
 script = ExtResource("1_lbhrr")
-map_width_in_tiles = 10000
-map_height_in_tiles = 10000
 dark_tile_frequency = 0.3
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1674634934]

@@ -2,38 +2,52 @@ extends Node2D
 
 @onready var tilemap_layer = $TileMapLayer
 
-# These appear in the Inspector when you click the 'game' node.
-# You can change them there without editing code.
-@export var map_width_in_tiles: int = 40
-@export var map_height_in_tiles: int = 30
-
-# How often dark-sand appears. 0.0 = never, 1.0 = everywhere.
-# The slider only goes from 0 to 1 in the inspector.
-@export_range(0.0, 1.0) var dark_tile_frequency: float = 0.15
+@export var chunk_size: int = 32
+@export var render_radius_in_chunks: int = 5
+@export var dark_tile_frequency: float = 0.15
 
 const TILE_LIGHT = 0
 const TILE_DARK = 1
 
+# Stores which chunks we've already built so we don't rebuild them
+var generated_chunks: Dictionary = {}
+
 func _ready():
-	# Seed the random number generator so every run is different
+	update_chunks_around(Vector2i(0, 0))
+
+func _process(_delta):
+	# If you add a player later, pass their tile position here instead
+	update_chunks_around(Vector2i(0, 0))
+
+func update_chunks_around(center_tile: Vector2i):
+	var center_chunk = tile_to_chunk(center_tile)
+	var radius = render_radius_in_chunks
+	
+	for cx in range(center_chunk.x - radius, center_chunk.x + radius + 1):
+		for cy in range(center_chunk.y - radius, center_chunk.y + radius + 1):
+			var chunk_pos = Vector2i(cx, cy)
+			if not generated_chunks.has(chunk_pos):
+				generate_chunk(chunk_pos)
+
+func tile_to_chunk(tile_pos: Vector2i) -> Vector2i:
+	return Vector2i(
+		floori(float(tile_pos.x) / chunk_size),
+		floori(float(tile_pos.y) / chunk_size)
+	)
+
+func generate_chunk(chunk_pos: Vector2i):
 	var rng = RandomNumberGenerator.new()
-	rng.randomize()
+	# Seed the RNG based on chunk position so the SAME chunk always looks identical
+	rng.seed = hash(chunk_pos)
 	
-	# Clear any old tiles from previous runs
-	tilemap_layer.clear()
+	var start_x = chunk_pos.x * chunk_size
+	var start_y = chunk_pos.y * chunk_size
 	
-	# Calculate the starting corner so the map is centered on (0, 0)
-	# Example: if width is 40, we start at -20 and go to +19
-	var start_x = -map_width_in_tiles / 2
-	var end_x = map_width_in_tiles / 2
-	
-	var start_y = -map_height_in_tiles / 2
-	var end_y = map_height_in_tiles / 2
-	
-	# Place the tiles
-	for x in range(start_x, end_x):
-		for y in range(start_y, end_y):
+	for x in range(start_x, start_x + chunk_size):
+		for y in range(start_y, start_y + chunk_size):
 			if rng.randf() < dark_tile_frequency:
 				tilemap_layer.set_cell(Vector2i(x, y), TILE_DARK, Vector2i(0, 0))
 			else:
 				tilemap_layer.set_cell(Vector2i(x, y), TILE_LIGHT, Vector2i(0, 0))
+	
+	generated_chunks[chunk_pos] = true
