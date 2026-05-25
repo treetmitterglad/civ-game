@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb0qtj0vjy1xo"
-path="res://.godot/imported/DinoSprites - mort.png-d4c0deb2d22d84aa26ab4644c973cff9.ctex"
+uid="uid://betjohd1jjex8"
+path="res://.godot/imported/light-sand.png-75cb6205c3b1162d9287b142b1ddc336.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sheets/DinoSprites - mort.png"
-dest_files=["res://.godot/imported/DinoSprites - mort.png-d4c0deb2d22d84aa26ab4644c973cff9.ctex"]
+source_file="res://assets/light-sand.png"
+dest_files=["res://.godot/imported/light-sand.png-75cb6205c3b1162d9287b142b1ddc336.ctex"]
 
 [params]
 

@@ -1,14 +1,37 @@
 [gd_scene format=3 uid="uid://dax5brfgijcp6"]
 
-[ext_resource type="Texture2D" uid="uid://hlkanibw5nf6" path="res://assets/sample-desert.png" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://daxmdvfs3oqpo" path="res://scenes/game.gd" id="1_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://betjohd1jjex8" path="res://assets/light-sand.png" id="1_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://nm8k1ih5emu5" path="res://assets/dark-sand.png" id="2_lbhrr"]
 [ext_resource type="Script" uid="uid://c4muggt21fscs" path="res://scripts/game/camera-movement.gd" id="2_lnu2h"]
 
-[node name="game" type="Node2D" unique_id=620889112]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
+texture = ExtResource("1_lnu2h")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
 
-[node name="SampleDesert" type="Sprite2D" parent="." unique_id=1089050476]
-texture = ExtResource("1_yqjtg")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
+texture = ExtResource("2_lbhrr")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u5sy4"]
+sources/0 = SubResource("TileSetAtlasSource_iywne")
+sources/1 = SubResource("TileSetAtlasSource_p57ef")
+
+[node name="game" type="Node2D" unique_id=620889112]
+script = ExtResource("1_lbhrr")
+map_width_in_tiles = 10000
+map_height_in_tiles = 10000
+dark_tile_frequency = 0.3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1674634934]
+tile_set = SubResource("TileSet_u5sy4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=600402032]
-zoom = Vector2(10, 10)
 script = ExtResource("2_lnu2h")
-movement_speed = 120.0
+movement_speed = 300.0

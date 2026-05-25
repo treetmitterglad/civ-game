@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgcpacdftw6jg"
-path="res://.godot/imported/bg.png-717d0f85aef636e1d429c90630739b51.ctex"
+uid="uid://nm8k1ih5emu5"
+path="res://.godot/imported/dark-sand.png-49c4276e47cd9563ce1ddb3e402d943e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/bg.png"
-dest_files=["res://.godot/imported/bg.png-717d0f85aef636e1d429c90630739b51.ctex"]
+source_file="res://assets/dark-sand.png"
+dest_files=["res://.godot/imported/dark-sand.png-49c4276e47cd9563ce1ddb3e402d943e.ctex"]
 
 [params]
 

@@ -11,9 +11,3 @@ func _physics_process(delta):
 	
 	if movement_directon:
 		position += movement_directon * movement_speed * delta
-
-
-
-
-func _on_button_pressed() -> void:
-	pass # Replace with function body.
