@@ -12,7 +12,7 @@ extends Node2D
 # --- TILES ---
 const TILE_LIGHT = 0
 const TILE_DARK = 1
-const TILE_WATER = 21
+const TILE_WATER = 2
 
 # --- SAND VARIATION ---
 @export_range(0.0, 1.0) var dark_tile_frequency: float = 0.2
