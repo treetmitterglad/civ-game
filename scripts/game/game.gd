@@ -15,12 +15,11 @@ const TILE_DARK = 1
 const TILE_WATER = 2
 
 # --- SAND VARIATION ---
-@export_range(0.0, 1.0) var dark_tile_frequency: float = 0.15
+@export_range(0.0, 1.0) var dark_tile_frequency: float = 0.2
 
 # --- WATER SETTINGS ---
-# Lowered from 128 -> 64 so pools are 2x more likely to land in any given chunk
 @export var zone_size: int = 64
-@export var water_chance_per_zone: float = 0.35  # bumped up slightly from 0.25
+@export var water_chance_per_zone: float = 0.35
 
 # DEBUG: set this to true to force a pool in every zone for instant visual confirmation
 @export var debug_force_water: bool = false

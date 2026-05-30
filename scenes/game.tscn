@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dax5brfgijcp6"]
 
-[ext_resource type="Script" uid="uid://daxmdvfs3oqpo" path="res://scenes/game.gd" id="1_lbhrr"]
+[ext_resource type="Script" uid="uid://daxmdvfs3oqpo" path="res://scripts/game/game.gd" id="1_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://betjohd1jjex8" path="res://assets/light-sand.png" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://nm8k1ih5emu5" path="res://assets/dark-sand.png" id="2_lbhrr"]
 [ext_resource type="Script" uid="uid://c4muggt21fscs" path="res://scripts/game/camera-movement.gd" id="2_lnu2h"]
